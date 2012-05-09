@@ -48,4 +48,5 @@ object Test04 {
     println(myConcatMap(List(List("a","abc"),List("defg")), func))
   }
   
+    
 }
