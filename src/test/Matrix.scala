@@ -1,7 +1,7 @@
 package test
 
-import [T]test.Matrix
-
+import scala.math._
+import java.util.concurrent._
   
   class Matrix[T](val len:Int,val m:Array[Array[T]] ){
 	
@@ -9,7 +9,7 @@ import [T]test.Matrix
 
   override def toString = {   
       "Matrix(" +
-      m.foldLeft(""){ (accu,item) => accu+(item.deepMkString("(",",",")"))} +
+      m.foldLeft(""){ (accu,item) => accu+(item.mkString("(",",",")"))} +
       ")"}
 	
 	
@@ -67,7 +67,7 @@ import [T]test.Matrix
     }
     
   def apply[T](a:Array[Array[T]])(implicit num:Numeric[T], cm: ClassManifest[T]) = {
-    val len = scala.Math.max(a.maxBy(_.size).size,a.size)
+    val len = max(a.maxBy(_.size).size,a.size)
     val res = Array.fill(len,len)(num.zero)
     for{i <- a.indices
         j <- a(i).indices}res(i)(j) = a(i)(j)

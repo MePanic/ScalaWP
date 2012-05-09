@@ -9,7 +9,7 @@ object Permutations {
     def fixPoints:List[Int]
   }
   
-  class ValidPerm(args:Collection[Int]) extends Permutation {
+  class ValidPerm(args:Traversable[Int]) extends Permutation {
     
     val perm = args.toList
     
@@ -43,7 +43,7 @@ object Permutations {
     def fixPoints = List()
   }
   
-  def checkValidity(args:Collection[Int]) = args.toList.sorted.apply(args.toList.sorted.size-1) == args.toList.sorted.size && args.toList.sorted.size == args.toList.sorted.toSet.size  
+  def checkValidity(args:Traversable[Int]) = args.toList.sorted.apply(args.toList.sorted.size-1) == args.toList.sorted.size && args.toList.sorted.size == args.toList.sorted.toSet.size  
   
   def s(args:Int*):Permutation = {
     if(!checkValidity(args)){ NaP} 

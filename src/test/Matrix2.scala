@@ -1,6 +1,6 @@
 package test
 
-import [T]test.Matrix2
+
 import scala.Array.fallbackCanBuildFrom
 import scala.math.Numeric
 import scala.math.max

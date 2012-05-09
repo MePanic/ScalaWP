@@ -29,7 +29,7 @@ object Matrizen {
     
     override def toString = {    
       "Matrix(" + 
-      matrix.foldLeft(""){ (accu,item) => accu+(item.deepMkString("(",",",")"))} + 
+      matrix.foldLeft(""){ (accu,item) => accu+(item.mkString("(",",",")"))} + 
       ")"
     }
 	
